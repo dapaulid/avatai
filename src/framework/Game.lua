@@ -47,6 +47,9 @@ function Game:LoadMap(file)
     ["F"] = self.world.tiles.food,
   }
   
+  -- Make absolute
+  file = arg[1] .. '/' .. file
+  
   local y = 1
   for line in io.lines(file) do
     for x=1,#line do

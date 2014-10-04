@@ -138,6 +138,9 @@ function Snake:Tick()
 		-- Become a tick older
 		self.age = self.age + 1
 	 
+		-- Update view for display purposes
+		self.view = self.world:CalcView(self.position, SnakeRules.viewradius)
+	 
 	else
 		Log("Invalid move direction: %s", dir)
 		self:Die()
@@ -151,6 +154,7 @@ end
 
 function Snake:Die()
 	self.alive = false
+	self.view = nil
 	Log("Snake '%s' died at age %d with length %d.", 
 	 self.id, self.age, self:Length())
 end

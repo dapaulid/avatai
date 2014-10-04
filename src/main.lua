@@ -18,11 +18,13 @@ local game = Game()
 --------------------------------------------------------------------------------
 
 -- Setup the game
-game:LoadMap("C:\\Users\\dapaulid\\workspace\\Snake\\src\\maps\\default.txt")
+game:LoadMap("maps/default.txt")
 game:AddPlayer("ai/snake/Example")
+--game:AddPlayer("ai/snake/Random")
 game:Prepare()
 
 -- Run it in GUI mode
+Gui.showviews = false
 Gui.ShowGame(game)
 
 --------------------------------------------------------------------------------
